@@ -1,3 +1,5 @@
+
+// Facilitate testing/writing the HTML without the server
 if (typeof io == 'undefined') {
   function io() {
     return {on:function(){}};
@@ -19,9 +21,8 @@ var offsetIndex = 1;
 var pianoWidth = 1530 + 50;
 
 
-
+// Dynamically scale the keyboard to fit any screen
 $(window).bind('resize', dynamicResize);
-
 function dynamicResize() {
   var w = $(window).width();
   var $p = $('#piano');
@@ -32,11 +33,11 @@ function dynamicResize() {
     $p.css('-webkit-transform', 'scale(' + scale + ')');
   }
 }
-
 // Initial Run on document ready
 $(function(){
   dynamicResize();
 });
+
 
 // Bind Select octave
 $('#full-piano-wrap').bind('click', function(e){
@@ -67,11 +68,6 @@ $("#toggleKeyboardKeysNames").click(function () {
   $("#piano div.keyname").hide();
   $("#toggleKeyNames").removeClass('on');
   $("#piano div.kbkeyname").toggle();
-  $(this).toggleClass('on');
- });
-
-$("#Octaves").click(function () {
-  $("#piano div.oN").toggle();
   $(this).toggleClass('on');
  });
 
