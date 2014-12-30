@@ -41,10 +41,10 @@ $(function(){
 
 // Populate and bind instrument/voice selection
 var $instSelect = $('#instrument');
-$(instruments).each(function(index, instrument){
+$(cvp75Instruments).each(function(index, instrument){
   $instSelect.append(
     $('<option>')
-      .val(index+1)
+      .val(index)
       .text(instrument.name)
   );
 });
