@@ -9,11 +9,6 @@
 
 <h1>TechNinja's Family Player PI-ano</h1>
 
-<nav>
-    <span id="toggleKeyNames">Toggle piano key names On/Off</span>
-    <span id="toggleKeyboardKeysNames">Toggle keyboard key names On/Off</span>
-</nav>
-
 <div id="full-piano-wrap">
   <div id="full-select"></div>
   <img id="full-piano" src="piano.svg">
@@ -66,6 +61,14 @@
       </div>
     </div>
   </div>
+
+
+  <nav>
+    <span id="toggleKeyNames">Show Piano keys</span>
+    <span id="toggleKeyboardKeysNames">Show Keyboard keys</span>
+    <label for="instrument">Instrument/Voice:</label>
+    <select id="instrument"></select>
+  </nav>
 
   <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
   <script src="socket.io/socket.io.js"></script>

@@ -39,13 +39,27 @@ $(function(){
 });
 
 
+// Populate and bind instrument/voice selection
+var $instSelect = $('#instrument');
+$(instruments).each(function(index, instrument){
+  $instSelect.append(
+    $('<option>')
+      .val(index+1)
+      .text(instrument.name)
+  );
+});
+
+$instSelect.change(function(e) {
+  midi.instrument($(this).val());
+});
+
+
 // Bind Select octave
 $('#full-piano-wrap').bind('click', function(e){
   var pos = e.pageX - $(this).offset().left;
   offsetIndex = parseInt(pos / ($(this).width() / offsets.length));
   $('#full-select').css('left', offsets[offsetIndex].pos + '%')
 });
-
 
 // Bind piano key click
 $('.key').bind('mousedown mouseup', function(e){
@@ -54,9 +68,6 @@ $('.key').bind('mousedown mouseup', function(e){
 });
 
 // Toggle options
-$("#piano div.keyname").hide();
-$("#piano div.kbkeyname").hide();
-
 $("#toggleKeyNames").click(function () {
   $("#piano div.kbkeyname").hide();
   $("#toggleKeyboardKeysNames").removeClass('on');
@@ -70,12 +81,6 @@ $("#toggleKeyboardKeysNames").click(function () {
   $("#piano div.kbkeyname").toggle();
   $(this).toggleClass('on');
  });
-
-$("#Strings").click(function () {
-  $("#pianoStrings").toggle();
-  $(this).toggleClass('on');
- });
-
 
 // Move trough all the keys
 $.each(pianoKeys, function(keyID, key) {
@@ -97,7 +102,6 @@ $.each(pianoKeys, function(keyID, key) {
 
       $elem.toggleClass('pressed', down);
 
-
       return false;
     });
 });
@@ -109,13 +113,13 @@ socket.on('midiin', function (data) {
 
 var midi = {
   note: function(note, volume) {
-    var data  = [channel, note, (volume ? volume : 0)];
+    var data  = [channel, parseInt(note), parseInt((volume ? volume : 0))];
     console.log('Sending:', data);
 
     socket.emit('midiout', data);
   },
   instrument: function(inst) {
-    var data  = [192, inst];
+    var data  = [192, parseInt(inst)];
     console.log('Sending:', data);
 
     socket.emit('midiout', data);

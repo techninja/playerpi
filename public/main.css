@@ -32,6 +32,7 @@ a:hover {color: #9C0413;}
 .kbkeyname {
     font-size: 4em;
     margin: 382px 1px 0 0;
+    display:none;
 }
 
 .white .keyname {
