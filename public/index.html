@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TechNinja's Family Player PI-ano</title>
+  <link rel="stylesheet" type="text/css" href="main.css" />
+</head>
+<body>
+
+<h1>TechNinja's Family Player PI-ano</h1>
+
+<nav>
+    <span id="toggleKeyNames">Toggle piano key names On/Off</span>
+    <span id="toggleKeyboardKeysNames">Toggle keyboard key names On/Off</span>
+    <a id="Octaves" style="float: right;">Octaves</a><br />
+</nav>
+
+<div id="full-piano-wrap">
+  <div id="full-select"></div>
+  <img id="full-piano" src="piano.svg">
+</div>
+
+<div id="piano">
+    <div id="pianoBody">
+      <div id="littleRedLine"></div>
+      <div id="o1" class="octave">
+        <div id="1A" class="key white"><div class="keyname">A</div><div class="kbkeyname">Z</div></div>
+        <div id="1B" class="key white"><div class="keyname">B</div><div class="kbkeyname">X</div></div>
+        <div class="flats">
+          <div id="1As" class="key black"><div class="keyname">A# == Bb</div><div class="kbkeyname">S</div></div>
+        </div>
+      </div>
+      <div id="o2" class="octave">
+        <div id="2C" class="key white" ><div class="keyname">C</div><div class="kbkeyname">C</div><div class="oN">3</div></div>
+        <div id="2D" class="key white"><div class="keyname">D</div><div class="kbkeyname">V</div></div>
+        <div id="2E" class="key white"><div class="keyname">E</div><div class="kbkeyname">B</div></div>
+        <div id="2F" class="key white"><div class="keyname">F</div><div class="kbkeyname">N</div></div>
+        <div id="2G" class="key white"><div class="keyname">G</div><div class="kbkeyname">M</div></div>
+        <div id="2A" class="key white"><div class="keyname">A</div><div class="kbkeyname">,</div></div>
+        <div id="2B" class="key white"><div class="keyname">B</div><div class="kbkeyname">.</div></div>
+        <div class="flats">
+          <div id="2Cs" class="key black"><div class="keyname">C# == Db</div><div class="kbkeyname">F</div></div>
+          <div id="2Ds" class="key black"><div class="keyname">D# == Eb</div><div class="kbkeyname">G</div></div>
+          <div id="2Fs" class="key black"><div class="keyname">F# == Gb</div><div class="kbkeyname">J</div></div>
+          <div id="2Gs" class="key black"><div class="keyname">G# == Ab</div><div class="kbkeyname">K</div></div>
+          <div id="2As" class="key black"><div class="keyname">A# == Bb</div><div class="kbkeyname">L</div></div>
+        </div>
+      </div>
+      <div id="o3" class="octave">
+        <div id="3C" class="key white" ><div class="keyname">C</div><div class="kbkeyname">E</div><div class="oN">4</div></div>
+        <div id="3D" class="key white"><div class="keyname">D</div><div class="kbkeyname">R</div></div>
+        <div id="3E" class="key white"><div class="keyname">E</div><div class="kbkeyname">T</div></div>
+        <div id="3F" class="key white"><div class="keyname">F</div><div class="kbkeyname">Y</div></div>
+        <div id="3G" class="key white"><div class="keyname">G</div><div class="kbkeyname">U</div></div>
+        <div id="3A" class="key white"><div class="keyname">A</div><div class="kbkeyname">I</div></div>
+        <div id="3B" class="key white"><div class="keyname">B</div><div class="kbkeyname">O</div></div>
+        <div class="flats">
+          <div id="3Cs" class="key black"><div class="keyname">C# == Db</div><div class="kbkeyname">4</div></div>
+          <div id="3Ds" class="key black"><div class="keyname">D# == Eb</div><div class="kbkeyname">5</div></div>
+          <div id="3Fs" class="key black"><div class="keyname">F# == Gb</div><div class="kbkeyname">7</div></div>
+          <div id="3Gs" class="key black"><div class="keyname">G# == Ab</div><div class="kbkeyname">8</div></div>
+          <div id="3As" class="key black"><div class="keyname">A# == Bb</div><div class="kbkeyname">9</div></div>
+        </div>
+      </div>
+      <div id="o4" class="octave">
+        <div id="4C" class="key white" ><div class="keyname">C</div><div class="kbkeyname">P</div><div class="oN">5</div></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="socket.io/socket.io.js"></script>
+  <script src="jquery.hotkeys.js"></script>
+  <script src="keyobjects.js"></script>
+
+  <script src="midiclient.js"></script>
+</body>
+</html>
