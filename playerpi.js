@@ -19,8 +19,8 @@ input.openPort(midiPort);
 output.openPort(midiPort);
 
 
-server.listen(port, function () {
-  console.log('Server listening at port %d', port);
+server.listen(httpPort, function () {
+  console.log('Server listening at port %d', httpPort);
 });
 
 // Routing (for index.html)
