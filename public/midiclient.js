@@ -1,7 +1,7 @@
 
 // Facilitate testing/writing the HTML without the server
 if (typeof io == 'undefined') {
-  function io() {
+  io = function() {
     return {on:function(){}};
   }
 }
