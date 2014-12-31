@@ -4,15 +4,21 @@
   <meta charset="UTF-8">
   <title>TechNinja's Family Player PI-ano</title>
   <link rel="stylesheet" type="text/css" href="main.css" />
+  <link rel="stylesheet" type="text/css" href="chosen.css" />
 </head>
 <body>
 
 <h1>TechNinja's Family Player PI-ano!</h1>
 
+<select id="instrument" data-placeholder="Choose an Instrument" size="5"></select>
+
 <div id="full-piano-wrap">
   <div id="full-select"></div>
   <img id="full-piano" src="piano.svg">
 </div>
+
+<span id="toggleKeyNames">Show Piano keys</span>
+<span id="toggleKeyboardKeysNames">Show Keyboard keys</span>
 
 <div id="piano">
     <div id="pianoBody">
@@ -62,17 +68,10 @@
     </div>
   </div>
 
-
-  <nav>
-    <span id="toggleKeyNames">Show Piano keys</span>
-    <span id="toggleKeyboardKeysNames">Show Keyboard keys</span>
-    <label for="instrument">Instrument/Voice:</label>
-    <select id="instrument"></select>
-  </nav>
-
   <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
   <script src="socket.io/socket.io.js"></script>
   <script src="jquery.hotkeys.js"></script>
+  <script src="chosen.jquery.js"></script>
   <script src="keyobjects.js"></script>
 
   <script src="midiclient.js"></script>

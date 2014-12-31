@@ -50,8 +50,14 @@ $(cvp75Instruments).each(function(index, instrument){
 });
 
 $instSelect.change(function(e) {
+  setTimeout(function () {
+    $('#instrument_chzn').removeClass('chzn-container-active');
+    $('.chzn-search input').blur();
+    $("#piano").focus();
+  }, 100);
+
   midi.instrument($(this).val());
-});
+}).chosen();
 
 
 // Bind Select octave
