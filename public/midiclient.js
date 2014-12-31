@@ -108,7 +108,23 @@ $.each(pianoKeys, function(keyID, key) {
 
 
 socket.on('midiin', function (data) {
-  // TODO: Convert input into visualization of key press
+  // If this is a piano key press...
+  if (data[0] == 144) {
+    var isPressed = (data[2] != 0);
+    var key = parseInt(data[1] - offsets[offsetIndex].note);
+
+    // Is the Key within the visible range?
+    if (key > 56 && key < 85) {
+      for(var id in pianoKeys) {
+        if (key == pianoKeys[id].note) {
+          $('#' + id).toggleClass('pressed', isPressed);
+          return false;
+        }
+      }
+    }
+
+  }
+
 });
 
 var midi = {
