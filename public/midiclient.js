@@ -12,7 +12,7 @@ var socket = io();
 var channel = 144
 var volume = 50;
 var offsets = [
-  {note: -25, pos: 0},
+  {note: -36, pos: 0},
   {note: -12, pos: 27},
   {note: 0, pos: 40.5},
   {note: 24, pos: 67.25}
